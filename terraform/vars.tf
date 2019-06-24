@@ -14,6 +14,7 @@ variable "aws_az" {
   default = "us-west-2a"
 }
 
+# !!cluster domain name needs to be provided
 variable "cluster_domain_name" {
   description = "domain domain name used by cluster"
 }
@@ -23,12 +24,8 @@ variable "cluster_name" {
   default     = "mycluster"
 }
 
-# Name variable used to name resources
+
+# !!Fellow name needs to be provided
 variable "fellow_name" {
   description = "The name that will be tagged on your resources."
 }
-
-# AWS IAM credentials - USE WITH CAUSTION!!!
-variable "aws_iam_access_key" {}
-
-variable "aws_iam_secret_key" {}

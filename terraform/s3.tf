@@ -23,21 +23,37 @@ resource "null_resource" "cluster_apply" {
     kops create cluster --cloud=$CLOUD --zones=${var.aws_az} --name=$NAME --dns-zone=${var.cluster_domain_name} &&
     kops update cluster $NAME --yes
     sleep 500
+    EOF
+
+    environment = {
+      NAME                  = "${var.cluster_name}.${var.cluster_domain_name}"
+      CLOUD                 = "${var.cloud_genre}"
+    }
+  }
+}
+
+resource "null_resource" "app_deploy" {
+
+  depends_on = ["null_resource.cluster_apply"]
+
+  provisioner "local-exec" {
+    command = <<EOF
     kubectl create -f ../k8s/flask-app-deployment.yaml
     kubectl create -f ../k8s/flask-app-service.yaml
+    EOF
+  }
+}
+
+resource "null_resource" "monitor_enable" {
+  depends_on = ["null_resource.cluster_apply"]
+
+  provisioner "local-exec" {
+    command = <<EOF
     kubectl create -f ../k8s/manifests/
     until kubectl get customresourcedefinitions servicemonitors.monitoring.coreos.com ; do date; sleep 1; echo ""; done
     until kubectl get servicemonitors --all-namespaces ; do date; sleep 1; echo ""; done
     kubectl apply -f ../k8s/manifests/
     EOF
-
-    environment = {
-      AWS_ACCESS_KEY_ID     = "${var.aws_iam_access_key}"
-      AWS_SECRET_ACCESS_KEY = "${var.aws_iam_secret_key}"
-      KOPS_STATE_STORE      = "s3://clusters.${var.cluster_domain_name}"
-      NAME                  = "${var.cluster_name}.${var.cluster_domain_name}"
-      CLOUD                 = "${var.cloud_genre}"
-    }
   }
 }
 
@@ -56,9 +72,6 @@ resource "null_resource" "cluster_destroy" {
     EOF
 
     environment = {
-      AWS_ACCESS_KEY_ID     = "${var.aws_iam_access_key}"
-      AWS_SECRET_ACCESS_KEY = "${var.aws_iam_secret_key}"
-      KOPS_STATE_STORE      = "s3://clusters.${var.cluster_domain_name}"
       NAME                  = "${var.cluster_name}.${var.cluster_domain_name}"
     }
   }
