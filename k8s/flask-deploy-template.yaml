@@ -11,7 +11,7 @@ spec:
         app: flask-app
     spec:
       containers:
-        - image: yuchengdock824/example-hoteldirt-image
+        - image: {{NAME_OF_IMAGE}}
           imagePullPolicy: Always
           name: flask-app
           ports:

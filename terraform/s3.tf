@@ -1,4 +1,5 @@
 resource "aws_s3_bucket" "cluster_bucket" {
+  count = 1
   bucket = "clusters.${var.cluster_domain_name}"
   acl    = "private"
 
@@ -15,7 +16,7 @@ resource "aws_s3_bucket" "cluster_bucket" {
 }
 
 resource "null_resource" "cluster_apply" {
-
+  count = 1
   depends_on = ["aws_s3_bucket.cluster_bucket"]
 
   provisioner "local-exec" {
@@ -33,7 +34,7 @@ resource "null_resource" "cluster_apply" {
 }
 
 resource "null_resource" "app_deploy" {
-
+  count = 1
   depends_on = ["null_resource.cluster_apply"]
 
   provisioner "local-exec" {
@@ -45,6 +46,7 @@ resource "null_resource" "app_deploy" {
 }
 
 resource "null_resource" "monitor_enable" {
+  count = 1
   depends_on = ["null_resource.cluster_apply"]
 
   provisioner "local-exec" {
@@ -58,7 +60,7 @@ resource "null_resource" "monitor_enable" {
 }
 
 resource "null_resource" "cluster_destroy" {
-
+  count = 1
   depends_on = ["aws_s3_bucket.cluster_bucket"]
 
   provisioner "local-exec" {
