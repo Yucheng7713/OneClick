@@ -134,12 +134,13 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      ```
      $ . down.sh
      ```
-  10.If you need further configuration or advanced manipulation to the cluster like using kubectl or kops, you can 
-     access the container by running the command :
-     ```
-     $ . access.sh
-     ```
-     Now it is just like what you usually do on your local host.
+  
+  10. If you need further configuration or advanced manipulation to the cluster like using kubectl or kops, you can 
+      access the container by running the command :
+      ```
+      $ . access.sh
+      ```
+      Now it is just like what you usually do on your local host.
   
   
      
