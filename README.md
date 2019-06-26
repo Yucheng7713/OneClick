@@ -5,7 +5,7 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
 ## Prerequisites 
 
 - Setup AWS & Install AWS CLI
-  1. Get an AWS account (https://aws.amazon.com/)
+  1. Get an [AWS account](https://aws.amazon.com/)
   2. Create an IAM admin user and group on either AWS console, It is not recommended to set everything up with root identity
      (the one u login with email).
   3. Grant the following IAM permissions to your IAM role in order to use the tool.
@@ -16,7 +16,7 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
       IAMFullAccess
       AmazonVPCFullAccess
       ```
-  4. Install AWS CLI through https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html, and set up the
+  4. Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html), and set up the
      credentials of your IAM role.
      Note : Once you create an IAM role, you will get an access key ID and a secret access key. Keep them secure as you 
      are likely to use them frequently to interact with AWS via CLI.
@@ -30,11 +30,10 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      ```
 
 - Install Docker and Create a Docker Hub account
-  1. For Mac user, the fastest way to install Docker is to go for Docker Desktop for Mac.
-     https://docs.docker.com/docker-for-mac/install/ 
-  2. After docker is installed on your machine, create a Docker account for using Docker Hub as your image registry.
+  1. For Mac user, the fastest way to install Docker is to go for [Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/install/). 
+  2. After docker is installed on your machine, create a Docker account for using [Docker Hub](https://hub.docker.com/)
+     as your image registry.
      (Images will be built from your applications and pushed onto Docker Hub.)
-     https://hub.docker.com/
   3. Login with your Docker ID
   4. Set environment variable $DOCKER_USER_NAME to your ~/.bash_profile
      ```
@@ -45,11 +44,11 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
 - Get a registered subdomain and set up Route53 for it
 
   The following instructions are for those who already have a registered domain name, the example used here is for domain name
-  hosted on Namecheap (https://www.namecheap.com).
+  hosted on [Namecheap](https://www.namecheap.com).
   For more information about how to set up a subdomain for Kubernetes, go to the doc of installing kops on aws
   https://github.com/kubernetes/kops/blob/master/docs/aws.md
   
-  1. Go to AWS Route53 https://console.aws.amazon.com/route53/home/
+  1. Go to [AWS Route53](https://console.aws.amazon.com/route53/)
   2. In dashboard on the left, click "Hosted zones".
   3. Click "Created Hosted Zone"
   4. Enter the subdomain name you decide to use. For instance, if your domain name is "example.com", you might go for 
@@ -75,6 +74,34 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      oneclick.example.com. 4588	IN	NS	ns-1900.awsdns-45.co.uk.
      ```
   As long as your DNS is up, you are good to go.
+
+## Compatibility 
+  - OS specification
+    The supported environment is mainly for Mac OSX and Linux. If you are using Windows, it is recommended to go for
+    Ubuntu subsystem for Windows 10.
+  - Cloud support
+    Currently the tool only support AWS.
+  - Restrictions to your project/repository if you want to use the deploying feature to deploy it :
+    1. There must be a "requirement.txt" located at the root path of your project, the location and file name are
+       non-negotiable.
+    2. In "requirement.txt", clearly state all dependencies that are used in your application with their versions.
+       If you are not sure about what dependency you use, there are few ways that you can generate the file automatically:
+       a. [Use pigar](https://github.com/damnever/pigar) by traversing your project directory
+       b. If you are using conda environment or a virtualenv, run the command :
+       ```
+       $ pip freeze > requirements.txt
+       ```
+    3. There must be a "run.py" located at the root path of your project, the location and file name are
+       non-negotiable.
+    4. In "run.py", the codes will be a standard Flask app, something like:
+    ```
+    from flask import Flask
+    app = Flask(__name__)
+    .....
+    if __name__ == '__main__':
+      app.run(host='0.0.0.0', port=80)
+    ```
+  
   
 ## Quick Start
 
