@@ -1,8 +1,8 @@
-## OneClick
+# OneClick
 Monitoring as a Service - DevOps Fellow @ Insight
 Toolkit for setting up Kubernetes and Prometheus monitoring components.
 
-# Prerequisites 
+## Prerequisites 
 
 - Setup AWS & Install AWS CLI
   1. Get an AWS account (https://aws.amazon.com/)
@@ -75,7 +75,7 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      ```
   As long as your DNS is up, you are good to go.
   
-# Quick Start
+## Quick Start
 
   1. Clone this repository to your local workspace.
   2. Run the following command :
