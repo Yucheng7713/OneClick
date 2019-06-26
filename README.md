@@ -94,13 +94,13 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
     3. There must be a "run.py" located at the root path of your project, the location and file name are
        non-negotiable.
     4. In "run.py", the codes will be a standard Flask app, something like:
-    ```
-    from flask import Flask
-    app = Flask(__name__)
-    .....
-    if __name__ == '__main__':
-      app.run(host='0.0.0.0', port=80)
-    ```
+       ```
+       from flask import Flask
+       app = Flask(__name__)
+       .....
+       if __name__ == '__main__':
+       app.run(host='0.0.0.0', port=80)
+       ```
   
   
 ## Quick Start
