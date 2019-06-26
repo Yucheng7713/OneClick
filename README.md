@@ -43,6 +43,7 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      ```
 
 - Get a registered subdomain and set up Route53 for it
+
   The following instructions is for those who already have a registered domain name, the example here is for domain name
   hosted on Namecheap (https://www.namecheap.com).
   For more information about how to set up a subdomain for Kubernetes, go to the doc of installing kops on aws
