@@ -57,7 +57,7 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
   4. Enter the subdomain name you decide to use. For instance, if your domain name is "example.com", you might go for 
      "oneclick.example.com".
      
-     <a href="url"><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_c.png" align="middle" height="302" width="500"></a>
+     <a href="url"><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_c.png" align="middle" height="302" width="550"></a>
      
   5. For 'Type', choose "Public Hosted Zone"
   6. After the hosted zone is created, you will get name servers for the subdomain name, use these name servers to 
