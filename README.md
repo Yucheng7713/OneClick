@@ -34,7 +34,9 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
   2. After docker is installed on your machine, create a Docker account for using [Docker Hub](https://hub.docker.com/)
      as your image registry.
      (Images will be built from your applications and pushed onto Docker Hub.)
-  3. Login with your Docker ID
+  3. Login with your Docker ID through Docker Desktop
+  
+     <a href="url"><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_1.png" align="middle" height="150" width="280"></a>
   4. Set environment variable $DOCKER_USER_NAME to your ~/.bash_profile
      ```
      $ echo "export DOCKER_USER_NAME=<put_your_docker_ID_here>" >> ~/.bash_profile
@@ -60,6 +62,7 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      - In dashboard, choose the domain name you would use by clicking "MANAGE".
      - Click on "Advanced DNS", under the host records section, create NS records by entering the NS values that you copy
        from new created hosted zone.
+       <a href="url"><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_4.png" align="middle" height="332" width="500"></a>
   7. After NS records are set, it takes around 30 min ( sometimes up to 2 hours ) until your domain name is ready.
      to test whether your DNS is ready, run the command :
      ```
