@@ -131,23 +131,23 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      !! Warning : Under no circumstance, do not delete the S3 bucket manually or by any other tools.
   7. Now is the time to deploy your application onto the cluster, to deploy from Github, simply run the following command :
      ```
-     $ . deploy.sh <url_to_github_repository>
+     $ . sh_scripts/deploy.sh <url_to_github_repository>
      ```
      After the deployment completes, it will expose a domain name which you can use to access your frontend application.
   
   8. For enabling the monitor functions, execute the command :
      ```
-     $ . monitor_enable.sh
+     $ . sh_scripts/monitor_enable.sh
      ```
   9. For tearing down the Kubernetes cluster, execute the command :
      ```
-     $ . down.sh
+     $ . sh_scripts/down.sh
      ```
   
   10. If you need further configuration or advanced manipulation to the cluster like using kubectl or kops, you can 
       access the container by running the command :
       ```
-      $ . access.sh
+      $ . sh_scripts/access.sh
       ```
       Now it is just like what you usually do on your local host.
   
