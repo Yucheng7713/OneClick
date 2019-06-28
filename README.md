@@ -29,11 +29,15 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      ```
 
 - Install Docker and Create a Docker Hub account
+  !! Note that the following instructions are specifically for **Docker Desktop for Mac**, for Linux-based system like Ubuntu,
+     visit https://docs.docker.com/install/linux/docker-ce/ubuntu/
+  !! The Docker spec in this project is **Docker Desktop Community Version 2.0.0.3 (31259)**
+  
   1. For Mac user, the fastest way to install Docker is to go for [Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/install/). 
   2. After docker is installed on your machine, create a Docker account for using [Docker Hub](https://hub.docker.com/)
      as your image registry.
      (Images will be built from your applications and pushed onto Docker Hub.)
-  3. Login with your Docker ID through Docker Desktop
+  3. Login with your Docker ID through Docker Desktop by clicking <.> on the right.
   
      <a href="url"><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_a.png" align="middle" height="150" width="280"></a>
      
@@ -43,22 +47,22 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      $ source ~/.bash_profile
      ```
 
-- Get a registered subdomain and set up Route53 for it
+- Get a registered subdomain and set up Route53 hosted zones for it
 
   The following instructions are for those who already have a registered domain name, the example used here is for domain name
-  hosted on [Namecheap](https://www.namecheap.com).
+  hosted on [**Namecheap**](https://www.namecheap.com).
   For more information about how to set up a subdomain for Kubernetes, go to the doc of installing kops on aws
   https://github.com/kubernetes/kops/blob/master/docs/aws.md
   
   1. Go to [AWS Route53](https://console.aws.amazon.com/route53/)
-  2. In dashboard on the left, click "Hosted zones".
-  3. Click "Created Hosted Zone"
+  2. In dashboard on the left, click **Hosted zones**.
+  3. Click **Created Hosted Zone**.
   4. Enter the subdomain name you decide to use. For instance, if your domain name is "example.com", you might go for 
      "oneclick.example.com".
      
      <a href="url"><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_c.png" align="middle" height="302" width="550"></a>
      
-  5. For 'Type', choose "Public Hosted Zone"
+  5. For **Type**, choose **Public Hosted Zone**
   6. After the hosted zone is created, you will get name servers for the subdomain name, use these name servers to 
      register the subdomain name on your domain name registration.
      If you are using Namecheap, here is the steps :
@@ -68,7 +72,7 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
        
        <a href="url"><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_b.png" align="middle" height="332" width="500"></a>
        
-  7. After NS records are set, it takes around 30 min ( sometimes up to 2 hours ) until your domain name is ready.
+  7. After NS records are set, it takes around 30 min ( sometimes might take up to 2 hours ) until your domain name is ready.
      to test whether your DNS is ready, run the command :
      ```
      $ dig ns oneclick.example.com
@@ -84,30 +88,30 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
   As long as your DNS is up, you are good to go.
 
 ## Compatibility 
-  - OS specification
+  - OS spec
     The supported environment is mainly for Mac OSX and Linux. If you are using Windows, it is recommended to go for
     Ubuntu subsystem for Windows 10.
   - Cloud support
-    Currently the tool only support AWS.
+    Currently the tool only supports AWS.
   - Restrictions to your project/repository if you want to use the deploying feature to deploy it :
-    1. There must be a "requirement.txt" located at the root path of your project, the location and file name are
+    1. There must be a **requirement.txt** located at the root path of your project, the location and file name are
        non-negotiable.
-    2. In "requirement.txt", clearly state all dependencies that are used in your application with their versions.
+    2. In **requirement.txt**, clearly state all dependencies that are used in your application with their versions.
        If you are not sure about what dependency you use, there are few ways that you can generate the file automatically:
        a. [Use pigar](https://github.com/damnever/pigar) by traversing your project directory
        b. If you are using conda environment or a virtualenv, run the command :
        ```
        $ pip freeze > requirements.txt
        ```
-    3. There must be a "run.py" located at the root path of your project, the location and file name are
+    3. There must be a **run.py** located at the root path of your project, the location and file name are
        non-negotiable.
-    4. In "run.py", the codes will be a standard Flask app, something like:
+    4. In **run.py**, the codes will be a standard Flask app, something like:
        ```
        from flask import Flask
        app = Flask(__name__)
        .....
        if __name__ == '__main__':
-       app.run(host='0.0.0.0', port=80)
+       app.run(host='0.0.0.0', port=5000)
        ```
   
   
