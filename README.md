@@ -6,8 +6,7 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
 
 - Setup AWS & Install AWS CLI
   1. Get an [AWS account](https://aws.amazon.com/)
-  2. Create an IAM admin user and group on either AWS console, It is not recommended to set everything up with root identity
-     (the one u login with email).
+  2. Create an IAM admin user and group on either AWS console (It is not recommended to set everything up with root account.)
   3. Grant the following IAM permissions to your IAM role in order to use the tool.
       ```
       AmazonEC2FullAccess
@@ -115,39 +114,43 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
 ## Quick Start
 
   1. Clone this repository to your local workspace.
-  2. Run the following command :
+  2. Build Python click command line tool by installing required dependencies :
+     Navigate to the project root and execute :
      ```
-     $ . sh_scripts/setup.sh
+     $ pip install -e .
      ```
-  3. Enter your name which will be used as the name of resources such as VPC on AWS
-  4. Enter a valid registered subdomain, the subdomain will be used by Kubernetes cluster
-  5. Well done! Now your production environment start initiating, after the initiation completes, a container will be boosted
+  3. Initiate the production environment by running the following command :
+     ```
+     $ oneclick init
+     ```
+  4. Enter your name which will be used as the name of resources such as VPC on AWS
+  5. Enter a valid registered subdomain, the subdomain will be used by Kubernetes cluster
+  6. Well done! Now your production environment start initiating, after the initiation completes, a container will be boosted
      up and run, the container will serve as the interface to interact with Kubernetes upon AWS, you can consider it a light-
      weighted virtual machine. 
      When the container is ready, it will start setting up Kubernetes cluster, this takes around 7 to 10 min.
-  6. After the cluster is set up on AWS, you will see a prompt information about the domain name of your cluster and the 
+  7. After the cluster is set up on AWS, you will see a prompt information about the domain name of your cluster and the 
      path of S3 bucket which is used to store the configuration of Kubernetes cluster.
      
      !! Warning : Under no circumstance, do not delete the S3 bucket manually or by any other tools.
-  7. Now is the time to deploy your application onto the cluster, to deploy from Github, simply run the following command :
+  8. Now is the time to deploy your application onto the cluster, to deploy from Github, simply run the following command :
      ```
-     $ . sh_scripts/deploy.sh <url_to_github_repository>
+     $ oneclick git-deploy <url_of_git_repository>
+     ```
+     You can also choose to deploy from your local machine :
+     ```
+     $ oneclick local-deploy <path_to_project_directory>
      ```
      After the deployment completes, it will expose a domain name which you can use to access your frontend application.
-  
-  8. For enabling the monitor functions, execute the command :
-     ```
-     $ . sh_scripts/monitor_enable.sh
-     ```
   9. For tearing down the Kubernetes cluster, execute the command :
      ```
-     $ . sh_scripts/down.sh
+     $ oneclick destroy
      ```
   
   10. If you need further configuration or advanced manipulation to the cluster like using kubectl or kops, you can 
       access the container by running the command :
       ```
-      $ . sh_scripts/access.sh
+      $ oneclick access
       ```
       Now it is just like what you usually do on your local host.
   
