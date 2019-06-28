@@ -141,14 +141,6 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
         
      !! It is also recommended to keep the created container as the only existed container on your machine, as the tool will
         universally retrieve the container from docker environment.
-        If you need other containers being existed or running, memorize and set the container's ID by executing :
-        ```
-        $ docker container ls -a
-        CONTAINER ID   IMAGE          COMMAND      CREATED             STATUS                     PORTS       NAMES
-        e2b0af58502c   oneclick_env   "bin/bash"   About an hour ago   Exited (0) 37 seconds ago              objective_curran
-        $ echo "export PRODUCT_CONTAINER_ID=e2b0af58502c" >> ~/.bash_profile
-        $ source ~/.bash_profile
-        ```
         
   7. After the cluster is set up on AWS, you will see a prompt information about the domain name of your cluster and the 
      path of S3 bucket which is used to store the configuration of Kubernetes cluster.
