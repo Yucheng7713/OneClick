@@ -23,7 +23,7 @@ resource "null_resource" "cluster_apply" {
     command = <<EOF
     kops create cluster --cloud=$CLOUD --zones=${var.aws_az} --name=$NAME --dns-zone=${var.cluster_domain_name} &&
     kops update cluster $NAME --yes
-    until kubectl version; do sleep 10 ; done
+    sleep 500
     EOF
 
     environment = {
@@ -32,6 +32,8 @@ resource "null_resource" "cluster_apply" {
     }
   }
 }
+
+# until kubectl version; do sleep 20 ; done
 
 resource "null_resource" "app_deploy" {
   count = 1

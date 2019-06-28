@@ -1,0 +1,9 @@
+README.md
+oneclick_cli/__init__.py
+oneclick_cli/cli.py
+oneclick_cli.egg-info/PKG-INFO
+oneclick_cli.egg-info/SOURCES.txt
+oneclick_cli.egg-info/dependency_links.txt
+oneclick_cli.egg-info/entry_points.txt
+oneclick_cli.egg-info/requires.txt
+oneclick_cli.egg-info/top_level.txt

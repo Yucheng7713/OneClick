@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        cli=oneclick_cli.cli:oneclick
+    

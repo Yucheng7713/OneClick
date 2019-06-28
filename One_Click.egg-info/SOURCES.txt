@@ -1,0 +1,8 @@
+README.md
+setup.py
+One_Click.egg-info/PKG-INFO
+One_Click.egg-info/SOURCES.txt
+One_Click.egg-info/dependency_links.txt
+One_Click.egg-info/entry_points.txt
+One_Click.egg-info/requires.txt
+One_Click.egg-info/top_level.txt
