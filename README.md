@@ -29,6 +29,7 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      ```
 
 - Install Docker and Create a Docker Hub account
+
   !! Note that the following instructions are specifically for **Docker Desktop for Mac**, for Linux-based system like Ubuntu,
      visit https://docs.docker.com/install/linux/docker-ce/ubuntu/
   !! The Docker spec in this project is **Docker Desktop Community Version 2.0.0.3 (31259)**
