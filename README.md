@@ -32,6 +32,7 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
 
   !! Note that the following instructions are specifically for **Docker Desktop for Mac**, for Linux-based system like Ubuntu,
      visit https://docs.docker.com/install/linux/docker-ce/ubuntu/
+     
   !! The Docker spec in this project is **Docker Desktop Community Version 2.0.0.3 (31259)**
   
   1. For Mac user, the fastest way to install Docker is to go for [Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/install/). 
@@ -67,8 +68,8 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
   6. After the hosted zone is created, you will get name servers for the subdomain name, use these name servers to 
      register the subdomain name on your domain name registration.
      If you are using Namecheap, here is the steps :
-     - In dashboard, choose the domain name you would use by clicking "MANAGE".
-     - Click on "Advanced DNS", under the host records section, create NS records by entering the NS values that you copy
+     - In dashboard, choose the domain name you would use by clicking **MANAGE**.
+     - Click on **Advanced DNS**, under the host records section, create NS records by entering the NS values that you copy
        from new created hosted zone.
        
        <a href="url"><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_b.png" align="middle" height="332" width="500"></a>
@@ -130,10 +131,25 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      ```
   4. Enter your name which will be used as the name of resources such as VPC on AWS
   5. Enter a valid registered subdomain, the subdomain will be used by Kubernetes cluster
-  6. Well done! Now your production environment start initiating, after the initiation completes, a container will be boosted
-     up and run, the container will serve as the interface to interact with Kubernetes upon AWS, you can consider it a light-
+  6. Well done! Now your production environment starts initiating. After the initiation completes, a container will be boosted
+     up and run, the container will serve as an interface to interact with Kubernetes upon AWS, you can consider it a light-
      weighted virtual machine. 
-     When the container is ready, it will start setting up Kubernetes cluster, this takes around 7 to 10 min.
+     When the container is ready, it will start setting up Kubernetes cluster, this process takes around 7 to 10 min.
+     
+     !! It is recommended to keeping the created container instead of removing it from your local machine, you can treat it as
+        a virtual environment for deploying your application and configuring infrastructure.
+        
+     !! It is also recommended to keep the created container as the only existed container on your machine, as the tool will
+        universally retrieve the container from docker environment.
+        If you need other containers being existed or running, memorize and set the container's ID by executing :
+        ```
+        $ docker container ls -a
+        CONTAINER ID   IMAGE          COMMAND      CREATED             STATUS                     PORTS       NAMES
+        e2b0af58502c   oneclick_env   "bin/bash"   About an hour ago   Exited (0) 37 seconds ago              objective_curran
+        $ echo "export PRODUCT_CONTAINER_ID=e2b0af58502c" >> ~/.bash_profile
+        $ source ~/.bash_profile
+        ```
+        
   7. After the cluster is set up on AWS, you will see a prompt information about the domain name of your cluster and the 
      path of S3 bucket which is used to store the configuration of Kubernetes cluster.
      
@@ -161,4 +177,3 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
   
   
      
-
