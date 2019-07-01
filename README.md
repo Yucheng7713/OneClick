@@ -2,6 +2,8 @@
 Monitoring as a Service - DevOps Fellow @ Insight
 Toolkit for setting up Kubernetes and Prometheus monitoring components.
 
+## Project Overview 
+
 ## Prerequisites 
 
 - Setup AWS & Install AWS CLI
@@ -39,7 +41,7 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
   2. After docker is installed on your machine, create a Docker account for using [Docker Hub](https://hub.docker.com/)
      as your image registry.
      (Images will be built from your applications and pushed onto Docker Hub.)
-  3. Login with your Docker ID through Docker Desktop by clicking <.> on the right.
+  3. Login with your Docker ID through Docker Desktop by clicking <a href=""><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_d.png"></a> on the top right.
   
      <a href="url"><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_a.png" align="middle" height="150" width="280"></a>
      
@@ -146,20 +148,29 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      path of S3 bucket which is used to store the configuration of Kubernetes cluster.
      
      !! Warning : Under no circumstance, do not delete the S3 bucket manually or by any other tools.
+  
   8. Now is the time to deploy your application onto the cluster, to deploy from Github, simply run the following command :
      ```
      $ oneclick git-deploy <url_of_git_repository>
      ```
+     
      You can also choose to deploy from your local machine :
      ```
      $ oneclick local-deploy <path_to_project_directory>
      ```
+     
      After the deployment completes, it will expose a domain name which you can use to access your frontend application.
   9. For tearing down the Kubernetes cluster, execute the command :
      ```
      $ oneclick destroy
      ```
-  
+     
+  10. For re-provisioning the K8S cluster, run the following command :
+      ( Before you run the command, make sure the container is running.)
+     ```
+     $ oneclick restart
+     ```
+     
   10. If you need further configuration or advanced manipulation to the cluster like using kubectl or kops, you can 
       access the container by running the command :
       ```
@@ -168,4 +179,3 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
       Now it is just like what you usually do on your local host.
   
   
-     
