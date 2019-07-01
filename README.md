@@ -174,10 +174,9 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      
   10. For re-provisioning the K8S cluster, run the following command :
       ( Before you run the command, make sure the container is running.)
-      
-     ```
-     $ oneclick restart
-     ```
+      ```
+      $ oneclick restart
+      ```
      
   10. If you need further configuration or advanced manipulation to the cluster like using kubectl or kops, you can 
       access the container by running the command :
