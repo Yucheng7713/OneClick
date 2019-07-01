@@ -28,6 +28,6 @@ oneclick_env
 
 # Provision Kubernetes cluster via Terraform in the provisioning environment
 docker exec `docker ps -q -l` /bin/bash -c \
-"cd /;cd terraform;touch terraform.tfvars;echo 'cluster_domain_name=\"$SUBDOMAIN\"' > terraform.tfvars; echo 'fellow_name=\"$NAME\"' >> terraform.tfvars"
+"cd /;cd terraform;rm terraform.tfvars;touch terraform.tfvars;echo 'cluster_domain_name=\"$SUBDOMAIN\"' > terraform.tfvars; echo 'fellow_name=\"$NAME\"' >> terraform.tfvars"
 docker exec `docker ps -q -l` /bin/bash -c \
 "cd /;cd terraform;terraform init;terraform apply -target=aws_s3_bucket.cluster_bucket -target=null_resource.cluster_apply -target=null_resource.cluster_destroy --auto-approve"

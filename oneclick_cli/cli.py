@@ -28,6 +28,11 @@ def access():
 	subprocess.call("./sh_scripts/access.sh")
 
 @main.command()
+def restart():
+	click.echo('Re-creating K8S cluster...')
+	subprocess.call("./sh_scripts/restart.sh")
+
+@main.command()
 def destroy():
 	click.echo('Destroying K8S cluster...')
-	subprocess.call("./sh_scripts/down.sh")
+	subprocess.call("./sh_scripts/destroy.sh")

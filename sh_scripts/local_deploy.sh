@@ -14,4 +14,4 @@ docker exec `docker ps -q -l` /bin/bash -c \
 "cat \"./k8s/flask-deploy-template.yaml\" | sed \"s/{{NAME_OF_IMAGE}}/$(echo $FLASK_IMAGE_TAG | perl -pe 's/\//\\\//g')/g\" > ./k8s/flask-app-deployment.yaml"
 
 docker exec `docker ps -q -l` /bin/bash -c \
-"cd /;cd terraform; terraform apply -target=null_resource.app_deploy --auto-approve"
+"cd /;cd terraform; terraform destroy -target=null_resource.app_deploy --auto-approve; terraform apply -target=null_resource.app_deploy --auto-approve"
