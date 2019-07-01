@@ -23,6 +23,7 @@ resource "null_resource" "cluster_apply" {
     command = <<EOF
     kops create cluster --cloud=$CLOUD --zones=${var.aws_az} --name=$NAME --dns-zone=${var.cluster_domain_name} &&
     kops update cluster $NAME --yes
+    kops validate $NAME
     sleep 500
     kubectl create -f ../k8s/manifests/
     until kubectl get customresourcedefinitions servicemonitors.monitoring.coreos.com ; do date; sleep 1; echo ""; done
