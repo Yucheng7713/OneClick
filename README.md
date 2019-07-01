@@ -5,8 +5,9 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
 ## Project Overview 
   OneClick is a command line interface which helps provision a K8S cluster with Prometheus monitoring services (including
   Prometheus dashboard, Grafana visualization and Alertmanager.) and deploys users' Flask application automatically.
-  
-  
+  <p align="center">
+      <img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_e.png" align="middle" height="400"         width="680">
+  </p>
   The core concept is to initiate a Docker container as a production environment with every pre-installed tools and 
   environmental settings that are needed to interact with the infrastructure.
 
@@ -173,10 +174,9 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      
   10. For re-provisioning the K8S cluster, run the following command :
       ( Before you run the command, make sure the container is running.)
-      
-     ```
-     $ oneclick restart
-     ```
+      ```
+      $ oneclick restart
+      ```
      
   10. If you need further configuration or advanced manipulation to the cluster like using kubectl or kops, you can 
       access the container by running the command :
