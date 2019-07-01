@@ -49,9 +49,9 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      as your image registry.
      (Images will be built from your applications and pushed onto Docker Hub.)
   3. Login with your Docker ID through Docker Desktop by clicking <a href=""><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_d.png"></a> on the top right.
-  
+  <p align="center">
      <a href="url"><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_a.png" align="middle" height="150" width="280"></a>
-     
+  </p>
   4. Set environment variable $DOCKER_USER_NAME to your ~/.bash_profile
      ```
      $ echo "export DOCKER_USER_NAME=<put_your_docker_ID_here>" >> ~/.bash_profile
@@ -70,9 +70,9 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
   3. Click **Created Hosted Zone**.
   4. Enter the subdomain name you decide to use. For instance, if your domain name is "example.com", you might go for 
      "oneclick.example.com".
-     
-     <a href="url"><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_c.png" align="middle" height="302" width="550"></a>
-     
+     <p align="center">
+      <a href="url"><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_c.png" align="middle"       height="302" width="550"></a>
+     </p>
   5. For **Type**, choose **Public Hosted Zone**
   6. After the hosted zone is created, you will get name servers for the subdomain name, use these name servers to 
      register the subdomain name on your domain name registration.
@@ -80,9 +80,9 @@ Toolkit for setting up Kubernetes and Prometheus monitoring components.
      - In dashboard, choose the domain name you would use by clicking **MANAGE**.
      - Click on **Advanced DNS**, under the host records section, create NS records by entering the NS values that you copy
        from new created hosted zone.
-       
-       <a href="url"><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_b.png" align="middle" height="332" width="500"></a>
-       
+       <p align="center">
+        <a href="url"><img src="https://github.com/Yucheng7713/OneClick/blob/master/README_IMG/README_IMG_b.png"      align="middle" height="332" width="500"></a>
+       </p>
   7. After NS records are set, it takes around 30 min ( sometimes might take up to 2 hours ) until your domain name is ready.
      to test whether your DNS is ready, run the command :
      ```
