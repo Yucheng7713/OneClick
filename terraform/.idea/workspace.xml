@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="515bc374-f974-4293-93cd-71451476e14a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sh_scripts/remote_deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../sh_scripts/remote_deploy.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/s3.tf" beforeDir="false" afterPath="$PROJECT_DIR$/s3.tf" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +22,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/s3.tf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+            <state relative-caret-position="225">
+              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kops.tf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -55,18 +64,11 @@
         <option value="$PROJECT_DIR$/terraform.tfvars" />
         <option value="$PROJECT_DIR$/vars.tf" />
         <option value="$PROJECT_DIR$/s3.tf" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/kops.tf" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="18" />
     <option name="y" value="22" />
     <option name="width" value="1440" />
     <option name="height" value="878" />
@@ -84,11 +86,6 @@
             <path>
               <item name="terraform" type="b2602c69:ProjectViewProjectNode" />
               <item name="terraform" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="terraform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="terraform" type="462c0819:PsiDirectoryNode" />
-              <item name=".terraform" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -136,15 +133,15 @@
       <updated>1561057322741</updated>
       <workItem from="1561057324640" duration="150000" />
       <workItem from="1561057496352" duration="37057000" />
-      <workItem from="1562003829093" duration="735000" />
+      <workItem from="1562003829093" duration="1646000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37942000" />
+    <option name="totallyTimeSpent" value="38853000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="18" y="22" width="1440" height="878" extended-state="0" />
+    <frame x="0" y="22" width="1440" height="878" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
@@ -213,8 +210,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/s3.tf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        <state relative-caret-position="225">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kops.tf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
         </state>
       </provider>
     </entry>

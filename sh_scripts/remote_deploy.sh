@@ -18,3 +18,6 @@ docker exec `docker ps -q -l` /bin/bash -c \
 docker exec `docker ps -q -l` /bin/bash -c \
 "cd /;cd terraform; terraform destroy -target=null_resource.app_deploy --auto-approve; terraform apply -target=null_resource.app_deploy --auto-approve"
 
+docker exec `docker ps -q -l` /bin/bash -c \
+"kubectl get service/flask-app" 
+
